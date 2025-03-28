@@ -17,9 +17,11 @@ export default {
     // commonjs(), // converts date-fns to ES modules
     // production && terser(), // minify, but only in production
   ],
-  output: {
-    file: 'dist-rollup/main.js',
-    format: 'cjs', // esm: es module, iife: immediately-invoked function expression — suitable for <script> tags
-    sourcemap: true,
-  },
+  output: [
+    {
+      file: 'dist/main.js',
+      format: 'cjs', // esm: es module, iife: immediately-invoked function expression — suitable for <script> tags
+      sourcemap: true,
+    },
+  ],
 };
