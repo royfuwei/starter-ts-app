@@ -1,7 +1,7 @@
 import json from '@rollup/plugin-json';
 import typescript from 'rollup-plugin-typescript2';
-// import resolve from '@rollup/plugin-node-resolve';
-// import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 // import terser from '@rollup/plugin-terser';
 
 // `npm run build` -> `production` is true
@@ -13,8 +13,10 @@ export default {
   plugins: [
     json(),
     typescript({ tsconfig: './tsconfig.rollup.json' }),
-    // resolve({ extensions: ['.ts'] }),
-    // commonjs(), // converts date-fns to ES modules
+    resolve({
+      extensions: ['.js', '.ts', '.json'],
+    }),
+    commonjs(), // converts to ES modules
     // production && terser(), // minify, but only in production
   ],
   output: [
