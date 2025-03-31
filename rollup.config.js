@@ -2,6 +2,7 @@ import json from '@rollup/plugin-json';
 import typescript from 'rollup-plugin-typescript2';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import { rollupDevNodemonPlugin } from './scripts/devNodemonPlugin.mjs';
 // import terser from '@rollup/plugin-terser';
 
 // `npm run build` -> `production` is true
@@ -17,6 +18,7 @@ export default {
       extensions: ['.js', '.ts', '.json'],
     }),
     commonjs(), // converts to ES modules
+    rollupDevNodemonPlugin(),
     // production && terser(), // minify, but only in production
   ],
   output: [
