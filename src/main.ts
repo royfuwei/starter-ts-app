@@ -7,7 +7,7 @@
  *
  * For tsc build, we need to use the `tsc-alias` package to resolve the module alias.
  */
-import 'module-alias/register';
+// import 'module-alias/register';
 import DemoUtils from '@/utils/demo.utils';
 import { configs } from '@/configs';
 
