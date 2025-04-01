@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "clean": "npx rimraf ./dist",
-    "build": "npm run build:rollup",
-    "dev": "npm run dev:rollup",
+    "build": "npm run build:esbuild",
+    "dev": "npm run dev:esbuild",
     "dev:esbuild": "NODE_ENV=local npm run clean &&  npx npm-run-all --parallel build:esbuild:watch",
     "dev:rollup": "NODE_ENV=local npm run clean &&  npx npm-run-all --parallel build:rollup:watch",
     "dev:tsc": "NODE_ENV=local npm run clean &&  npm run build:tsc:watch -- --onSuccess \"npm start\"",
