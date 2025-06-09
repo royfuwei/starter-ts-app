@@ -18,6 +18,29 @@ const main = async () => {
   console.log(`${demoValue}!!`);
   await new Promise((resolve) => setTimeout(resolve, 5000));
   console.log('Hello, World!');
+
+  const closeProcesses = (code = 1) => {
+    process.exit(code);
+  };
+
+  const successHandler = () => {
+    console.info('');
+    console.info('SIGTERM received');
+    closeProcesses(0);
+  };
+
+  const failureHandler = (error: any) => {
+    console.info('');
+    console.error('Uncaught Exception');
+    console.error(error);
+    closeProcesses(1);
+  };
+
+  process.on('uncaughtException', failureHandler);
+  process.on('unhandledRejection', failureHandler);
+
+  process.on('SIGTERM', successHandler);
+  process.on('SIGINT', successHandler);
 };
 
 main().catch(console.error);
