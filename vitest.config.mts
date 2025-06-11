@@ -20,7 +20,7 @@ export default defineConfig({
       all: true,
       include: ['src/*'],
       provider: 'istanbul', // or 'v8'
-      reportsDirectory: '.test/coverage',
+      reportsDirectory: '.test/vitest/coverage',
     },
   },
 });
