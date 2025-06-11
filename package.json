@@ -25,6 +25,8 @@
     "test": "npm run vitest",
     "vitest": "vitest --passWithNoTests",
     "vitest:ui": "vitest --passWithNoTests --ui",
+    "vitest:e2e": "vitest --config vitest.config.e2e.mts --passWithNoTests",
+    "vitest:e2e:ui": "vitest --config vitest.config.e2e.mts --passWithNoTests --ui",
     "jest": "jest --passWithNoTests",
     "jest:watch": "jest --watch",
     "jest:web": "jest && npx http-server ./.test/jest",
